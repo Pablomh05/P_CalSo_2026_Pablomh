@@ -54,19 +54,19 @@ En el análisis inicial se han identificado las siguientes disconformidades:
 
 ## 4. Soluciones adoptadas
 
-### Disconformidad 1 — `java:SXXXX`
+### Disconformidad 1 — `java:S1197`
 
-**Localización:** `src/.../Clase.java`, línea XX  
-**Responsable:** NOMBRE Y APELLIDOS  
-**Commit:** `abcdef1`
+**Localización:** `src/main/java/juego/geometria/Direccion.java`, línea 19  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:**
 
 **Problema detectado**
 
-Descripción breve del problema indicado por SonarQube for Eclipse.
+Los corchetes del array están colocados en la variable en lugar del tipo de dato.
 
 **Solución adoptada**
 
-Descripción de la modificación realizada para resolver la disconformidad.
+Se han movido los corchetes [] para que acompañen al tipo de dato (Direccion[]).
 
 ---
 
