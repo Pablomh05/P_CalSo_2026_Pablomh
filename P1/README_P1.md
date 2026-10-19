@@ -70,19 +70,19 @@ Se han movido los corchetes [] para que acompañen al tipo de dato (Direccion[])
 
 ---
 
-### Disconformidad 2 — `java:SXXXX`
+### Disconformidad 2 — `java:S2119`
 
-**Localización:** `src/.../Clase.java`, línea XX  
-**Responsable:** NOMBRE Y APELLIDOS  
-**Commit:** `abcdef2`
+**Localización:** `src/main/java/juego/geometria/Direccion.java`, línea 21  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
 
 **Problema detectado**
 
-Descripción breve del problema indicado por SonarQube for Eclipse.
+Se instancia un nuevo objeto Random cada vez que se ejecuta el método.
 
 **Solución adoptada**
 
-Descripción de la modificación realizada para resolver la disconformidad.
+Se extrae la instanciación de Random convirtiéndola en un atributo private static final de la clase para que se reutilice.
 
 ---
 
