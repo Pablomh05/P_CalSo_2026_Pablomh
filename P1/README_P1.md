@@ -4,10 +4,9 @@
 
 | Miembro | Nombre y apellidos |
 |---|---|
-| Alumno/a 1 | NOMBRE Y APELLIDOS |
-| Alumno/a 2 | NOMBRE Y APELLIDOS |
+| Alumno | Pablo Meroño Herranz |
 
-**Nombre del proyecto Eclipse:** `P1_INICIALES`
+**Nombre del proyecto Eclipse:** `P1_PMH`
 
 ---
 
@@ -27,11 +26,29 @@ En el análisis inicial se han identificado las siguientes disconformidades:
 
 | Nº | Regla Sonar | Archivo | Línea | Disconformidad |
 |---:|---|---|---:|---|
-| 1 | `java:SXXXX` | `Clase.java` | XX | Descripción de la disconformidad |
-| 2 | `java:SXXXX` | `Clase.java` | XX | Descripción de la disconformidad |
-| 3 | `java:SXXXX` | `Clase.java` | XX | Descripción de la disconformidad |
-
-> Deben incluirse **todas las disconformidades observadas en el análisis inicial**.
+| 1 | `java:S1197` | `Direccion.java` | 19 | Move the array designators [] to the type. |
+| 2 | `java:S2119` | `Direccion.java` | 21 | Save and re-use this "Random". |
+| 3 | `java:S1197` | `Programa.java` | 7 | Move the array designators [] to the type. |
+| 4 | `java:S1197` | `Programa.java` | 10 | Move the array designators [] to the type. |
+| 5 | `java:S106` | `Programa.java` | 20 | Replace this use of System.out by a logger. |
+| 6 | `java:S4973` | `Programa.java` | 18 | Strings and Boxed types should be compared using "equals()". |
+| 7 | `java:S2201` | `Programa.java` | 16 | The return value of "concat" must be used. |
+| 8 | `java:S2184` | `Punto.java` | 117 | Cast one of the operands of this subtraction operation to a "double". |
+| 9 | `java:S2184` | `Punto.java` | 117 | Cast one of the operands of this subtraction operation to a "double". |
+| 10 | `java:S1201` | `Punto.java` | 126 | Either override Object.equals(Object), or rename the method to prevent any confusion. |
+| 11 | `java:S2975` | `Punto.java` | 136 | Remove this "clone" implementation; use a copy constructor or copy factory instead. |
+| 12 | `java:S108` | `Punto.java` | 143 | Remove this block of code, fill it in, or add a comment explaining why it is empty. |
+| 13 | `java:S1905` | `Punto.java` | 130 | Remove this unnecessary cast to "Punto". |
+| 14 | `java:S1128` | `Punto.java` | 3 | Remove this unnecessary import: java.lang classes are always implicitly imported. |
+| 15 | `java:S1128` | `Punto.java` | 4 | Remove this unused import 'java.util.Random'. |
+| 16 | `java:S1144` | `Punto.java` | 116 | Remove this unused private "distancia" method. |
+| 17 | `java:S115` | `Punto.java` | 11 | Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'. |
+| 18 | `java:S100` | `Punto.java` | 51 | Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'. |
+| 19 | `java:S100` | `Punto.java` | 82 | Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'. |
+| 20 | `java:S1124` | `Punto.java` | 11 | Reorder the modifiers to comply with the Java Language Specification. |
+| 21 | `java:S2225` | `Punto.java` | 145 | Return a non null object. |
+| 22 | `java:S1172` | `circulo.java` | 10 | Remove this unused method parameter "centroIni". |
+| 23 | `java:S101` | `circulo.java` | 3 | Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'. |
 
 ---
 
