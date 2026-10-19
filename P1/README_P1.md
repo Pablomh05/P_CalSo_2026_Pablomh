@@ -86,7 +86,23 @@ Se extrae la instanciación de Random convirtiéndola en un atributo private sta
 
 ---
 
-### Disconformidad 3 — `java:SXXXX`
+### Disconformidad 3 — `java:S1197`
+
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 7  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:**
+
+**Problema detectado**
+
+Los corchetes del array están colocados en la variable en lugar del tipo de dato.
+
+**Solución adoptada**
+
+Se han movido los corchetes para que acompañen al tipo de dato (String[] args).
+
+---
+
+### Disconformidad 4 — `java:SXXXX`
 
 **Localización:** `src/.../Clase.java`, línea XX  
 **Responsable:** NOMBRE Y APELLIDOS  
