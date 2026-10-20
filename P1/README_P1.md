@@ -150,6 +150,22 @@ Se sustituye info == "" por el método info.equals("") para comparar correctamen
 
 ---
 
+### Disconformidad 7 — `java:S2201`
+
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 16  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El valor devuelto por el método .concat() no se estaba asignando a ninguna variable, perdiéndose el resultado de la concatenación debido a la inmutabilidad de los Strings.
+
+**Solución adoptada**
+
+Se reasigna el resultado de la operación a la propia variable modificando la instrucción a info = info.concat(punto.toString());.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
