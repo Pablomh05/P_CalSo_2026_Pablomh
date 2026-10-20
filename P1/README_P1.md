@@ -263,6 +263,22 @@ Se ha eliminado la declaración de importación no utilizada.
 
 ---
 
+### Disconformidad 16 — `java:S1144`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 115  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El método distancia estaba declarado como privado y no se utilizaba internamente, lo que SonarQube identifica como método no utilizado.
+
+**Solución adoptada**
+
+En lugar de eliminar código útil para la lógica geométrica, se ha cambiado su visibilidad a public para exponer esta funcionalidad a otras clases del proyecto.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
