@@ -279,6 +279,22 @@ En lugar de eliminar código útil para la lógica geométrica, se ha cambiado s
 
 ---
 
+### Disconformidad 17 — `java:S115`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 10  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El nombre de la constante defaultValue no cumplía con la convención estándar de Java de usar mayúsculas y guiones bajos (UPPER_CASE).
+
+**Solución adoptada**
+
+Se ha renombrado la constante a DEFAULT_VALUE para ajustarse a la expresión regular requerida.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
