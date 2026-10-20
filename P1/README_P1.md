@@ -137,7 +137,7 @@ Se ha sustituido System.out.println() por la clase estandarizada java.util.loggi
 
 ### Disconformidad 6 — `java:S4973`
 
-**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 18  
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 21  
 **Responsable:** Pablo Meroño Herranz  
 **Commit:** 
 
@@ -153,7 +153,7 @@ Se sustituye info == "" por el método info.equals("") para comparar correctamen
 
 ### Disconformidad 7 — `java:S2201`
 
-**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 16  
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 19  
 **Responsable:** Pablo Meroño Herranz  
 **Commit:** 
 
