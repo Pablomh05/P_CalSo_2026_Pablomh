@@ -49,6 +49,7 @@ En el análisis inicial se han identificado las siguientes disconformidades:
 | 21 | `java:S2225` | `Punto.java` | 145 | Return a non null object. |
 | 22 | `java:S1172` | `circulo.java` | 10 | Remove this unused method parameter "centroIni". |
 | 23 | `java:S101` | `circulo.java` | 3 | Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'. |
+| 24 | `java:S1206` | `Punto.java` | 127 | This class overrides "equals()" and should therefore also override "hashCode()". |
 
 ---
 
