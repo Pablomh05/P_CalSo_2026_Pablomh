@@ -231,6 +231,22 @@ Se ha eliminado por completo el método clone(), ya que la clase dispone de un c
 
 ---
 
+### Disconformidad 14 — `java:S1128`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 3  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Se importaba explícitamente la clase Math del paquete java.lang, lo cual es innecesario porque Java importa este paquete de forma implícita.
+
+**Solución adoptada**
+
+Se ha eliminado la línea del import redundante.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |

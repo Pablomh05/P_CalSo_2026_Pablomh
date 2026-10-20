@@ -1,6 +1,5 @@
 package juego.geometria;
 
-import java.lang.Math;
 import java.util.Objects;
 import java.util.Random;
 
