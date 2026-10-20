@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  */
 public class Punto {
-    public final static int DEFAULT_VALUE = 0;
+    public static final int DEFAULT_VALUE = 0;
 
      final int x;
      final int y;

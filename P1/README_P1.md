@@ -327,6 +327,22 @@ Se ha renombrado el método a situacionRelativa utilizando la herramienta de ref
 
 ---
 
+### Disconformidad 20 — `java:S1124`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 10  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Los modificadores de la constante DEFAULT_VALUE no seguían el orden recomendado por la especificación de Java (final static en lugar de static final).
+
+**Solución adoptada**
+
+Se ha reordenado la declaración a public static final int DEFAULT_VALUE = 0; cumpliendo con el estándar.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
