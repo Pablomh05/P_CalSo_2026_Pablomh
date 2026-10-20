@@ -215,6 +215,22 @@ Se ha implementado el método hashCode() utilizando java.util.Objects.hash(x, y)
 
 ---
 
+### Disconformidades 11, 12 y 21 — `java:S2975, java:S108 y java:S2225`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 144, 151 y 153  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El método clone() es una mala práctica (se recomienda constructor de copia), contenía un bloque catch que silenciaba excepciones y, además, finalizaba devolviendo un valor null explícito.
+
+**Solución adoptada**
+
+Se ha eliminado por completo el método clone(), ya que la clase dispone de un constructor de copia adecuado. Esta única modificación atómica elimina a la vez la mala práctica del clon, el bloque vacío y el retorno nulo.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |

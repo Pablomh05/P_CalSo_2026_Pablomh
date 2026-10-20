@@ -139,19 +139,6 @@ public class Punto {
 	public int hashCode() {
 		return Objects.hash(x, y);
 	}
-	
-	@Override
-	public Punto clone(){
-		Punto copia;
-
-		try{
-			copia = (Punto)super.clone();
-			return copia;
-		}
-		catch(CloneNotSupportedException e){ }
-
-		return null;
-	}
 
 }
 
