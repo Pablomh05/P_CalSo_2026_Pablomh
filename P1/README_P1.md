@@ -343,6 +343,22 @@ Se ha reordenado la declaración a public static final int DEFAULT_VALUE = 0; cu
 
 ---
 
+### Disconformidad 22 — `java:S1172`
+
+**Localización:** `src/main/java/juego/geometria/circulo.java`, línea 10  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+SonarQube marcaba el parámetro centroIni como no utilizado. El problema era un error lógico: el constructor no estaba inicializando el atributo centro de la clase.
+
+**Solución adoptada**
+
+En lugar de eliminar el parámetro, se ha corregido el constructor asignando el parámetro al atributo (this.centro = centroIni;).
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |

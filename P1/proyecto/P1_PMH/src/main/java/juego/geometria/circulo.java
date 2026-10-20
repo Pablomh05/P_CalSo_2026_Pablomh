@@ -8,6 +8,7 @@ public class circulo {
     private int radio;
 
     public circulo(Punto centroIni, int radioIni){
+    	this.centro = centroIni;
         radio = radioIni;
     }
 
