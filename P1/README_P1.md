@@ -134,19 +134,19 @@ Se ha sustituido System.out.println() por la clase estandarizada java.util.loggi
 
 ---
 
-### Disconformidad 6 — `java:SXXXX`
+### Disconformidad 6 — `java:S4973`
 
-**Localización:** `src/.../Clase.java`, línea XX  
-**Responsable:** NOMBRE Y APELLIDOS  
-**Commit:** `abcdef3`
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 18  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
 
 **Problema detectado**
 
-Descripción breve del problema indicado por SonarQube for Eclipse.
+Se comparan cadenas de texto (Strings) usando el operador ==, el cual compara referencias en memoria en lugar del contenido.
 
 **Solución adoptada**
 
-Descripción de la modificación realizada para resolver la disconformidad.
+Se sustituye info == "" por el método info.equals("") para comparar correctamente su contenido.
 
 ---
 
