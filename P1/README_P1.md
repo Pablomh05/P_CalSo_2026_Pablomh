@@ -311,6 +311,22 @@ Se ha renombrado el método a adyacente utilizando la herramienta de refactoriza
 
 ---
 
+### Disconformidad 19 — `java:S100`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 81  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El nombre del método situacion_relativa contenía un guion bajo, incumpliendo la convención estándar camelCase de Java.
+
+**Solución adoptada**
+
+Se ha renombrado el método a situacionRelativa utilizando la herramienta de refactorización para actualizar también sus referencias.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
