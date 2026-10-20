@@ -102,6 +102,22 @@ Se han movido los corchetes para que acompañen al tipo de dato (String[] args).
 
 ---
 
+### Disconformidad 4 — `java:S1197`
+
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 10  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Los corchetes del array están colocados junto al nombre de la variable (puntos[]).
+
+**Solución adoptada**
+
+Se han movido los corchetes para que acompañen al tipo de dato (Punto[] puntos).
+
+---
+
 ### Disconformidad 4 — `java:SXXXX`
 
 **Localización:** `src/.../Clase.java`, línea XX  
