@@ -182,6 +182,22 @@ Se ha añadido un cast explícito a double a uno de los operandos de cada resta 
 
 ---
 
+### Disconformidades 10 y 13 — `java:S1201 y java:S1905`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 126 y 130  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El método equals recibía un objeto de tipo Punto en lugar de Object (no sobrescribiendo el original) y su lógica interna contenía un cast redundante.
+
+**Solución adoptada**
+
+Al reescribir la firma a equals(Object obj) y ajustar su lógica de validación, se han solucionado ambas disconformidades con la misma modificación atómica. Nota: Esta corrección hace aflorar una nueva disconformidad que será la número 24 (regla java:S1206, que se resolverá en el siguiente ciclo).
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |

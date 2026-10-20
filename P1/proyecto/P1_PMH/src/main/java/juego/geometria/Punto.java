@@ -123,13 +123,15 @@ public class Punto {
 	}
 
 	
-	public boolean equals(Punto obj) {
+	@Override
+	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
 
 		Punto other = (Punto) obj;
-		
-		return  (x == other.x && y == other.y);
+		return (x == other.x && y == other.y);
 	}
 
 	@Override
