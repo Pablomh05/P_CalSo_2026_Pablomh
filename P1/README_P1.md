@@ -295,6 +295,22 @@ Se ha renombrado la constante a DEFAULT_VALUE para ajustarse a la expresión reg
 
 ---
 
+### Disconformidad 18 — `java:S100`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 50  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El nombre del método Adyacente comenzaba por mayúscula, incumpliendo la convención estándar camelCase de Java.
+
+**Solución adoptada**
+
+Se ha renombrado el método a adyacente utilizando la herramienta de refactorización para actualizar también sus referencias.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
