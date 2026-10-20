@@ -199,6 +199,22 @@ Al reescribir la firma a equals(Object obj) y ajustar su lógica de validación,
 
 ---
 
+### Disconformidad 24 — `java:S1206`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 127  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+La clase sobrescribía el método equals() pero no sobrescribía el método hashCode(), incumpliendo el contrato de Java que exige que ambos estén implementados para garantizar el correcto funcionamiento en colecciones.
+
+**Solución adoptada**
+
+Se ha implementado el método hashCode() utilizando java.util.Objects.hash(x, y) para generar un código basado en los mismos atributos que se usan en la comparación.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |

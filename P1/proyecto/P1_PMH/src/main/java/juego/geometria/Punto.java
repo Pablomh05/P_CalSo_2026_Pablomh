@@ -1,6 +1,7 @@
 package juego.geometria;
 
 import java.lang.Math;
+import java.util.Objects;
 import java.util.Random;
 
 /** La clase Punto representa un punto inmutable en el espacio bidimensional.
@@ -134,6 +135,11 @@ public class Punto {
 		return (x == other.x && y == other.y);
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, y);
+	}
+	
 	@Override
 	public Punto clone(){
 		Punto copia;
