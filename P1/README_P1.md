@@ -59,7 +59,7 @@ En el análisis inicial se han identificado las siguientes disconformidades:
 
 **Localización:** `src/main/java/juego/geometria/Direccion.java`, línea 19  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:**
+**Commit:** `71d61f4`
 
 **Problema detectado**
 
@@ -75,7 +75,7 @@ Se han movido los corchetes [] para que acompañen al tipo de dato (Direccion[])
 
 **Localización:** `src/main/java/juego/geometria/Direccion.java`, línea 21  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `c002b17`
 
 **Problema detectado**
 
@@ -91,7 +91,7 @@ Se extrae la instanciación de Random convirtiéndola en un atributo private sta
 
 **Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 7  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:**
+**Commit:** `a8ce33b`
 
 **Problema detectado**
 
@@ -107,7 +107,7 @@ Se han movido los corchetes para que acompañen al tipo de dato (String[] args).
 
 **Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 10  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `380d6d4`
 
 **Problema detectado**
 
@@ -123,7 +123,7 @@ Se han movido los corchetes para que acompañen al tipo de dato (Punto[] puntos)
 
 **Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 20  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `45e6b20`
 
 **Problema detectado**
 
@@ -139,7 +139,7 @@ Se ha sustituido System.out.println() por la clase estandarizada java.util.loggi
 
 **Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 21  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `7cd53ba`
 
 **Problema detectado**
 
@@ -155,7 +155,7 @@ Se sustituye info == "" por el método info.equals("") para comparar correctamen
 
 **Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 19  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `b280775`
 
 **Problema detectado**
 
@@ -171,7 +171,7 @@ Se reasigna el resultado de la operación a la propia variable modificando la in
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 117  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `9efff3d`
 
 **Problema detectado**
 
@@ -187,7 +187,7 @@ Se ha añadido un cast explícito a double a uno de los operandos de cada resta 
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 126 y 130  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `2b136ad`
 
 **Problema detectado**
 
@@ -203,7 +203,7 @@ Al reescribir la firma a equals(Object obj) y ajustar su lógica de validación,
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 127  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `6253dbc`
 
 **Problema detectado**
 
@@ -219,7 +219,7 @@ Se ha implementado el método hashCode() utilizando java.util.Objects.hash(x, y)
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 144, 151 y 153  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `57b1f48`
 
 **Problema detectado**
 
@@ -235,7 +235,7 @@ Se ha eliminado por completo el método clone(), ya que la clase dispone de un c
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 3  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `c909e0b`
 
 **Problema detectado**
 
@@ -251,7 +251,7 @@ Se ha eliminado la línea del import redundante.
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 4  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `88382cf`
 
 **Problema detectado**
 
@@ -267,7 +267,7 @@ Se ha eliminado la declaración de importación no utilizada.
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 115  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `ec601d7`
 
 **Problema detectado**
 
@@ -283,7 +283,7 @@ En lugar de eliminar código útil para la lógica geométrica, se ha cambiado s
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 10  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `12df405`
 
 **Problema detectado**
 
@@ -299,7 +299,7 @@ Se ha renombrado la constante a DEFAULT_VALUE para ajustarse a la expresión reg
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 50  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `b18ffbd`
 
 **Problema detectado**
 
@@ -315,7 +315,7 @@ Se ha renombrado el método a adyacente utilizando la herramienta de refactoriza
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 81  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `09ab768`
 
 **Problema detectado**
 
@@ -331,7 +331,7 @@ Se ha renombrado el método a situacionRelativa utilizando la herramienta de ref
 
 **Localización:** `src/main/java/juego/geometria/Punto.java`, línea 10  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `9cfac46`
 
 **Problema detectado**
 
@@ -347,7 +347,7 @@ Se ha reordenado la declaración a public static final int DEFAULT_VALUE = 0; cu
 
 **Localización:** `src/main/java/juego/geometria/circulo.java`, línea 10  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `5034cda`
 
 **Problema detectado**
 
@@ -363,7 +363,7 @@ En lugar de eliminar el parámetro, se ha corregido el constructor asignando el 
 
 **Localización:** `src/main/java/juego/geometria/circulo.java`, línea 3  
 **Responsable:** Pablo Meroño Herranz  
-**Commit:** 
+**Commit:** `604ede7`
 
 **Problema detectado**
 
@@ -379,9 +379,26 @@ Se ha utilizado la herramienta de refactorización para renombrar la clase y su 
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
 |---:|---|---|---|---|
-| 1 | `java:SXXXX` | Nombre y apellidos | `abcdef1` | Resuelta |
-| 2 | `java:SXXXX` | Nombre y apellidos | `abcdef2` | Resuelta |
-| 3 | `java:SXXXX` | Nombre y apellidos | `abcdef3` | Resuelta |
+| 1 | `java:S1197` | Pablo Meroño Herranz | `71d61f4` | Resuelta |
+| 2 | `java:S2119` | Pablo Meroño Herranz | `c002b17` | Resuelta |
+| 3 | `java:S1197` | Pablo Meroño Herranz | `a8ce33b` | Resuelta |
+| 4 | `java:S1197` | Pablo Meroño Herranz | `380d6d4` | Resuelta |
+| 5 | `java:S106` | Pablo Meroño Herranz | `45e6b20` | Resuelta |
+| 6 | `java:S4973` | Pablo Meroño Herranz | `7cd53ba` | Resuelta |
+| 7 | `java:S2201` | Pablo Meroño Herranz | `b280775` | Resuelta |
+| 8 y 9 | `java:S2184` | Pablo Meroño Herranz | `9efff3d` | Resueltas |
+| 10 y 13 | `java:S1201 y java:S1905` | Pablo Meroño Herranz | `2b136ad` | Resueltas |
+| 24 | `java:S1206` | Pablo Meroño Herranz | `6253dbc` | Resuelta |
+| 11, 12 y 21 | `java:S2975, java:S108 y java:S2225` | Pablo Meroño Herranz | `57b1f48` | Resueltas |
+| 14 | `java:S1128` | Pablo Meroño Herranz | `c909e0b` | Resuelta |
+| 15 | `java:S1128` | Pablo Meroño Herranz | `88382cf` | Resuelta |
+| 16 | `java:S1144` | Pablo Meroño Herranz | `ec601d7` | Resuelta |
+| 17 | `java:S115` | Pablo Meroño Herranz | `12df405` | Resuelta |
+| 18 | `java:S100` | Pablo Meroño Herranz | `b18ffbd` | Resuelta |
+| 19 | `java:S100` | Pablo Meroño Herranz | `09ab768` | Resuelta |
+| 20 | `java:S1124` | Pablo Meroño Herranz | `9cfac46` | Resuelta |
+| 22 | `java:S1172` | Pablo Meroño Herranz | `5034cda` | Resuelta |
+| 23 | `java:S101` | Pablo Meroño Herranz | `604ede7` | Resuelta |
 
 ---
 
@@ -402,7 +419,7 @@ La captura final permite comprobar que se está analizando el mismo proyecto uti
 La versión final del proyecto Eclipse se encuentra en:
 
 ```text
-P1/proyecto/P1_INICIALES/
+P1/proyecto/P1_PMH/
 ```
 
 El proyecto incluido en esta carpeta contiene las modificaciones correspondientes a las soluciones documentadas anteriormente y coincide con la versión sobre la que se ha realizado la captura final.
@@ -411,14 +428,14 @@ El proyecto incluido en esta carpeta contiene las modificaciones correspondiente
 
 ## 8. Comprobación de la entrega
 
-- [ ] El nombre del proyecto sigue el formato establecido: `P1_INICIALES`.
-- [ ] Se identifican los dos miembros del grupo.
-- [ ] Se incluye la captura del análisis inicial.
-- [ ] Se han documentado todas las disconformidades inicialmente detectadas.
-- [ ] Cada solución está asociada a un commit identificable en `main`.
-- [ ] Se identifica qué miembro del grupo realizó cada corrección.
-- [ ] Los dos miembros han participado mediante commits propios.
-- [ ] Se incluye la captura del análisis final.
-- [ ] La captura final permite comprobar que no quedan disconformidades.
-- [ ] Se ha incorporado el proyecto Eclipse final dentro de `P1/proyecto/`.
-- [ ] El proyecto final corresponde al código analizado en la captura final.
+- [x] El nombre del proyecto sigue el formato establecido: `P1_PMH`.
+- [x] Se identifican los dos miembros del grupo.
+- [x] Se incluye la captura del análisis inicial.
+- [x] Se han documentado todas las disconformidades inicialmente detectadas.
+- [x] Cada solución está asociada a un commit identificable en `main`.
+- [x] Se identifica qué miembro del grupo realizó cada corrección.
+- [x] Los dos miembros han participado mediante commits propios.
+- [x] Se incluye la captura del análisis final.
+- [x] La captura final permite comprobar que no quedan disconformidades.
+- [x] Se ha incorporado el proyecto Eclipse final dentro de `P1/proyecto/`.
+- [x] El proyecto final corresponde al código analizado en la captura final.

@@ -12,7 +12,7 @@ public class Programa {
 
       Punto[] puntos = new Punto[2]; 
       puntos[0] = punto1;
-      
+
       String info = ""; 
 
       for (Punto punto : puntos)
