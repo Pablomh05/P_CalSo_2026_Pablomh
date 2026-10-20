@@ -247,6 +247,22 @@ Se ha eliminado la línea del import redundante.
 
 ---
 
+### Disconformidad 15 — `java:S1128`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 4  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Se importaba la clase java.util.Random pero no se utilizaba en ninguna parte del código de la clase.
+
+**Solución adoptada**
+
+Se ha eliminado la declaración de importación no utilizada.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
