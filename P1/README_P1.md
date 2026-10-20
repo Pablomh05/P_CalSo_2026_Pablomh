@@ -359,6 +359,22 @@ En lugar de eliminar el parámetro, se ha corregido el constructor asignando el 
 
 ---
 
+### Disconformidad 23 — `java:S101`
+
+**Localización:** `src/main/java/juego/geometria/circulo.java`, línea 3  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+El nombre de la clase comenzaba con letra minúscula, incumpliendo la convención de Java.
+
+**Solución adoptada**
+
+Se ha utilizado la herramienta de refactorización para renombrar la clase y su archivo correspondiente a Circulo.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
