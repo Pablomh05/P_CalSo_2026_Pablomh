@@ -118,7 +118,23 @@ Se han movido los corchetes para que acompañen al tipo de dato (Punto[] puntos)
 
 ---
 
-### Disconformidad 4 — `java:SXXXX`
+### Disconformidad 5 — `java:S106`
+
+**Localización:** `src/main/java/juego/pruebas/Programa.java`, línea 20  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Se utiliza System.out para mostrar texto por consola, esto no es seguro ni escalable.
+
+**Solución adoptada**
+
+Se ha sustituido System.out.println() por la clase estandarizada java.util.logging.Logger empleando el nivel info().
+
+---
+
+### Disconformidad 6 — `java:SXXXX`
 
 **Localización:** `src/.../Clase.java`, línea XX  
 **Responsable:** NOMBRE Y APELLIDOS  
