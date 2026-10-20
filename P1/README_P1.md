@@ -166,6 +166,22 @@ Se reasigna el resultado de la operación a la propia variable modificando la in
 
 ---
 
+### Disconformidades 8 y 9 — `java:S2184`
+
+**Localización:** `src/main/java/juego/geometria/Punto.java`, línea 117  
+**Responsable:** Pablo Meroño Herranz  
+**Commit:** 
+
+**Problema detectado**
+
+Se realiza una resta con aritmética de enteros antes de pasar el resultado a un método que espera un double, lo que puede generar pérdida de precisión.
+
+**Solución adoptada**
+
+Se ha añadido un cast explícito a double a uno de los operandos de cada resta ((double) this.x y (double) this.y) para forzar la aritmética de punto flotante.
+
+---
+
 ## 5. Resumen de las correcciones
 
 | Nº | Regla Sonar | Responsable | Commit | Resultado |
