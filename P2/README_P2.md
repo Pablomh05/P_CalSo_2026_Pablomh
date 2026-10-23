@@ -445,13 +445,17 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 
 | ID | Clase | Condición y resultado esperado | Método JUnit |
 | --- | --- | --- | --- |
-| | | | |
+| T-EN-1 | Energy | Energía 1 (válida) -> Almacena valor 1 | testGivenEnergy1WhenCreatingEnergyThenStoresValue1 |
+| T-EN-2 | Energy | Energía 0 (límite) -> Lanza IllegalArgumentException | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException |
+| T-EN-3 | Energy | Energía -5 (inválida) -> Lanza IllegalArgumentException | testGivenEnergyMinus5WhenCreatingEnergyThenThrowsIllegalArgumentException |
+| T-EN-4 | Energy | Dos energías con valor 10 -> Son iguales y tienen mismo hash | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode |
 
 ### Defectos detectados y corregidos
 
 | ID | Prueba que revela el defecto | Esperado / observado | Causa y corrección | Commit |
 | --- | --- | --- | --- | --- |
-| | | | | |
+| D-EN-1 | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException | Esperado: lanza excepción. Observado: permite crear objeto con energía 0 | Causa: La validación usaba `< 0`. Corrección: Cambiado a `<= 0`. |  |
+| D-EN-2 | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode | Esperado: Objetos con mismo valor son iguales. Observado: Son distintos | Causa: Los métodos `equals` y `hashCode` comparaban referencias de memoria (`this == other`) en lugar del atributo. Corrección: Se modificaron para comparar por el valor de `units`. |  |
 
 ### Suplantador y desarrollo incremental
 
