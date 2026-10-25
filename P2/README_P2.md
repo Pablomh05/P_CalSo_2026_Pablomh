@@ -449,13 +449,18 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | T-EN-2 | Energy | Energía 0 (límite) -> Lanza IllegalArgumentException | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException |
 | T-EN-3 | Energy | Energía -5 (inválida) -> Lanza IllegalArgumentException | testGivenEnergyMinus5WhenCreatingEnergyThenThrowsIllegalArgumentException |
 | T-EN-4 | Energy | Dos energías con valor 10 -> Son iguales y tienen mismo hash | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode |
+| T-CP-1 | CleaningProduct | WATER -> "agua" | testGivenWaterWhenToStringThenReturnsAgua |
+| T-CP-2 | CleaningProduct | SOAP -> "jabón" | testGivenSoapWhenToStringThenReturnsJabon |
+| T-CP-3 | CleaningProduct | WAX -> "cera" | testGivenWaxWhenToStringThenReturnsCera |
+| T-CP-4 | CleaningProduct | GLASS_CLEANER -> "limpiacristales" | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales |
 
 ### Defectos detectados y corregidos
 
 | ID | Prueba que revela el defecto | Esperado / observado | Causa y corrección | Commit |
 | --- | --- | --- | --- | --- |
-| D-EN-1 | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException | Esperado: lanza excepción. Observado: permite crear objeto con energía 0 | Causa: La validación usaba `< 0`. Corrección: Cambiado a `<= 0`. |  |
-| D-EN-2 | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode | Esperado: Objetos con mismo valor son iguales. Observado: Son distintos | Causa: Los métodos `equals` y `hashCode` comparaban referencias de memoria (`this == other`) en lugar del atributo. Corrección: Se modificaron para comparar por el valor de `units`. |  |
+| D-EN-1 | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException | Esperado: lanza excepción. Observado: permite crear objeto con energía 0 | Causa: La validación usaba `< 0`. Corrección: Cambiado a `<= 0`. | `8810089` |
+| D-EN-2 | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode | Esperado: Objetos con mismo valor son iguales. Observado: Son distintos | Causa: Los métodos `equals` y `hashCode` comparaban referencias de memoria (`this == other`) en lugar del atributo. Corrección: Se modificaron para comparar por el valor de `units`. | `8810089` |
+| D-CP-1 | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales | Esperado: "limpiacristales". Observado: "cristales" | Causa: El string asignado a GLASS_CLEANER era "cristales". Corrección: Cambiado a "limpiacristales". |  |
 
 ### Suplantador y desarrollo incremental
 

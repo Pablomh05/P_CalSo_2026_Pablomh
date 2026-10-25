@@ -1,0 +1,27 @@
+package com.calso.robot.domain.model;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CleaningProductTest {
+
+    @Test
+    void testGivenWaterWhenToStringThenReturnsAgua() {
+        assertEquals("agua", CleaningProduct.WATER.toString());
+    }
+
+    @Test
+    void testGivenSoapWhenToStringThenReturnsJabon() {
+        assertEquals("jabón", CleaningProduct.SOAP.toString());
+    }
+
+    @Test
+    void testGivenWaxWhenToStringThenReturnsCera() {
+        assertEquals("cera", CleaningProduct.WAX.toString());
+    }
+
+    @Test
+    void testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales() {
+        assertEquals("limpiacristales", CleaningProduct.GLASS_CLEANER.toString());
+    }
+}
