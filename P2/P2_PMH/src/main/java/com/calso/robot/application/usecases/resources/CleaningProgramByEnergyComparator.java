@@ -1,4 +1,5 @@
 package com.calso.robot.application.usecases.resources;
+
 import java.util.Comparator;
 import com.calso.robot.domain.model.CleaningProgram;
 
@@ -6,7 +7,8 @@ public final class CleaningProgramByEnergyComparator implements Comparator<Clean
     
     @Override
     public int compare(CleaningProgram first, CleaningProgram second) {
-        int byEnergy = Integer.compare(second.getEnergy().getValue(), first.getEnergy().getValue());
+        // CORRECCIÓN D-COMP-1: Orden ascendente comparando first contra second
+        int byEnergy = Integer.compare(first.getEnergy().getValue(), second.getEnergy().getValue());
         return byEnergy != 0 ? byEnergy : first.getId().compareTo(second.getId());
     }
 }
