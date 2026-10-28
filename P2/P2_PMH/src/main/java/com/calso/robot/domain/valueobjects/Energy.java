@@ -10,7 +10,7 @@ public final class Energy {
     }
     
     public static Energy of(int units) {
-    	// CORRECCIÓN 1: La especificación exige estrictamente > 0
+    	// CORRECCIÓN D-EN-1: La especificación exige estrictamente > 0
         if (units <= 0) 
             throw new IllegalArgumentException("Energy must be positive");
         return new Energy(units);
@@ -20,7 +20,7 @@ public final class Energy {
         return units; 
     }
     
- // CORRECCIÓN 2: Comparación real por el valor de 'units'
+ // CORRECCIÓN D-EN-2: Comparación real por el valor de 'units'
     @Override
     public boolean equals(Object other) { 
         if (this == other) return true;

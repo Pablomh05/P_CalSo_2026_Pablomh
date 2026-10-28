@@ -453,6 +453,21 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | T-CP-2 | CleaningProduct | SOAP -> "jabón" | testGivenSoapWhenToStringThenReturnsJabon |
 | T-CP-3 | CleaningProduct | WAX -> "cera" | testGivenWaxWhenToStringThenReturnsCera |
 | T-CP-4 | CleaningProduct | GLASS_CLEANER -> "limpiacristales" | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales |
+| T-PR-1 | CleaningProgram | id nulo -> Lanza IllegalArgumentException | testGivenNullIdWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-2 | CleaningProgram | id en blanco -> Lanza IllegalArgumentException | testGivenBlankIdWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-3 | CleaningProgram | name nulo -> Lanza IllegalArgumentException | testGivenNullNameWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-4 | CleaningProgram | name en blanco -> Lanza IllegalArgumentException | testGivenBlankNameWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-5 | CleaningProgram | energy nula -> Lanza NullPointerException | testGivenNullEnergyWhenCreatingProgramThenThrowsNullPointerException |
+| T-PR-6 | CleaningProgram | requirements nulo -> Lanza NullPointerException | testGivenNullRequirementsWhenCreatingProgramThenThrowsNullPointerException |
+| T-PR-7 | CleaningProgram | Clave nula en requirements -> Lanza IllegalArgumentException | testGivenNullKeyInRequirementsWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-8 | CleaningProgram | Valor nulo en requirements -> Lanza IllegalArgumentException | testGivenNullValueInRequirementsWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-9 | CleaningProgram | Cantidad negativa (-1) en requirements -> Lanza IllegalArgumentException | testGivenNegativeQuantityInRequirementsWhenCreatingProgramThenThrowsIllegalArgumentException |
+| T-PR-10 | CleaningProgram | Mapa requirements vacío -> Crea programa con mapa vacío | testGivenEmptyRequirementsWhenCreatingProgramThenProgramIsCreatedWithEmptyMap |
+| T-PR-11 | CleaningProgram | Argumentos válidos (incluyendo cantidad 0) -> Getters devuelven valores esperados | testGivenValidArgumentsWhenCreatingProgramThenGettersReturnExpectedValues |
+| T-PR-12 | CleaningProgram | Modificar mapa original tras construir -> No afecta a requirements del programa | testGivenMutableMapWhenModifiedAfterCreationThenProgramRequirementsRemainUnchanged |
+| T-PR-13 | CleaningProgram | Modificar mapa devuelto por getRequirements() -> Lanza UnsupportedOperationException | testGivenProgramWhenModifyingReturnedRequirementsMapThenThrowsUnsupportedOperationException |
+| T-PR-14 | CleaningProgram | Dos programas con mismo id y distintos atributos -> Son iguales y mismo hashCode | testGivenTwoProgramsWithSameIdAndDifferentAttributesWhenComparingThenTheyAreEqualAndSameHashCode |
+| T-PR-15 | CleaningProgram | Dos programas con distinto id y mismos atributos -> No son iguales y distinto hashCode | testGivenTwoProgramsWithDifferentIdAndSameAttributesWhenComparingThenTheyAreNotEqual |
 
 ### Defectos detectados y corregidos
 
@@ -460,7 +475,9 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | --- | --- | --- | --- | --- |
 | D-EN-1 | testGivenEnergy0WhenCreatingEnergyThenThrowsIllegalArgumentException | Esperado: lanza excepción. Observado: permite crear objeto con energía 0 | Causa: La validación usaba `< 0`. Corrección: Cambiado a `<= 0`. | `8810089` |
 | D-EN-2 | testGivenTwoEnergyValues10WhenComparingThenTheyAreEqualAndHaveSameHashCode | Esperado: Objetos con mismo valor son iguales. Observado: Son distintos | Causa: Los métodos `equals` y `hashCode` comparaban referencias de memoria (`this == other`) en lugar del atributo. Corrección: Se modificaron para comparar por el valor de `units`. | `8810089` |
-| D-CP-1 | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales | Esperado: "limpiacristales". Observado: "cristales" | Causa: El string asignado a GLASS_CLEANER era "cristales". Corrección: Cambiado a "limpiacristales". |  |
+| D-CP-1 | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales | Esperado: "limpiacristales". Observado: "cristales" | Causa: El string asignado a GLASS_CLEANER era "cristales". Corrección: Cambiado a "limpiacristales". | `35b0878` |
+| D-PR-1 | testGivenMutableMapWhenModifiedAfterCreationThenProgramRequirementsRemainUnchanged / testGivenProgramWhenModifyingReturnedRequirementsMapThenThrowsUnsupportedOperationException | Esperado: Copia defensiva e inmodificable. Observado: El mapa interno cambiaba al mutar el mapa original o el devuelto | Causa: El constructor asignaba directamente la referencia `this.requirements = requirements`. Corrección: Se usó `Map.copyOf(requirements)` para crear copia defensiva inmodificable. |  |
+| D-PR-2 | testGivenTwoProgramsWithSameIdAndDifferentAttributesWhenComparingThenTheyAreEqualAndSameHashCode / testGivenTwoProgramsWithDifferentIdAndSameAttributesWhenComparingThenTheyAreNotEqual | Esperado: Igualdad y hashCode basados solo en `id`. Observado: Comparaba por `name` | Causa: `equals` y `hashCode` usaban el atributo `name` en lugar de `id`. Corrección: Se modificaron para usar `id.equals(p.id)` e `id.hashCode()`. |  |
 
 ### Suplantador y desarrollo incremental
 

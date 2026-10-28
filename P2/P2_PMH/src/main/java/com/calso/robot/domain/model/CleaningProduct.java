@@ -1,7 +1,7 @@
 package com.calso.robot.domain.model;
 
 public enum CleaningProduct {
-    // CORRECCIÓN: Cambiado "cristales" por "limpiacristales"
+    // CORRECCIÓN D-CP-1: Cambiado "cristales" por "limpiacristales"
     WATER("agua"), SOAP("jabón"), WAX("cera"), GLASS_CLEANER("limpiacristales");
     
     private final String label;

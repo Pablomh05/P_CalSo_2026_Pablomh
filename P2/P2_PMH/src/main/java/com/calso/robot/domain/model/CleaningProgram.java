@@ -22,7 +22,8 @@ public final class CleaningProgram {
         
         this.id = id; 
         this.name = name; 
-        this.requirements = requirements;
+        // CORRECCIÓN D-PR-1: Copia defensiva e inmodificable
+        this.requirements = Map.copyOf(requirements);
     }
     
     public String getId() { 
@@ -43,11 +44,13 @@ public final class CleaningProgram {
     
     @Override
     public boolean equals(Object other) {
-        return other instanceof CleaningProgram p && name.equals(p.name);
+        // CORRECCIÓN D-PR-2: Igualdad basada únicamente en id
+        return other instanceof CleaningProgram p && id.equals(p.id);
     }
     
     @Override
     public int hashCode() { 
-        return name.hashCode(); 
+        // CORRECCIÓN D-PR-2: HashCode basado únicamente en id
+        return id.hashCode(); 
     }
 }
