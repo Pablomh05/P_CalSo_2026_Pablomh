@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CleaningProgramTest {
 
-    // 1. Validaciones del constructor: id y name (no nulos ni cadena blanca)
+    // Validaciones del constructor: id y name (no nulos ni cadena blanca)
     @Test
     void testGivenNullIdWhenCreatingProgramThenThrowsIllegalArgumentException() {
         Energy energy = Energy.of(10);
@@ -49,7 +49,7 @@ class CleaningProgramTest {
                 () -> new CleaningProgram("id-1", "   ", energy, validReqs));
     }
 
-    // 2. Validaciones del constructor: energy y requirements (no nulos)
+    // Validaciones del constructor: energy y requirements (no nulos)
     @Test
     void testGivenNullEnergyWhenCreatingProgramThenThrowsNullPointerException() {
         Map<CleaningProduct, Integer> emptyReqs = Map.of();
@@ -66,7 +66,7 @@ class CleaningProgramTest {
                 () -> new CleaningProgram("id-1", "Nombre", energy, null));
     }
 
-    // 3. Validaciones de las entradas del mapa: claves/cantidades no nulas y cantidades >= 0
+    // Validaciones de las entradas del mapa: claves/cantidades no nulas y cantidades >= 0
     @Test
     void testGivenNullKeyInRequirementsWhenCreatingProgramThenThrowsIllegalArgumentException() {
         Energy energy = Energy.of(10);
@@ -96,14 +96,14 @@ class CleaningProgramTest {
                 () -> new CleaningProgram("id-1", "Nombre", energy, reqs));
     }
 
-    // 4. El mapa puede estar vacío y no se limita la cantidad de productos
+    // El mapa puede estar vacío y no se limita la cantidad de productos
     @Test
     void testGivenEmptyRequirementsWhenCreatingProgramThenProgramIsCreatedWithEmptyMap() {
         CleaningProgram program = new CleaningProgram("prog-1", "Seco", Energy.of(5), Collections.emptyMap());
         assertTrue(program.getRequirements().isEmpty());
     }
 
-    // 5. getId(), getName(), getEnergy(), getRequirements() devuelven las propiedades correspondientes (incluyendo cantidad 0 válida)
+    // getId(), getName(), getEnergy(), getRequirements() devuelven las propiedades correspondientes (incluyendo cantidad 0 válida)
     @Test
     void testGivenValidArgumentsWhenCreatingProgramThenGettersReturnExpectedValues() {
         Energy energy = Energy.of(15);
@@ -120,7 +120,7 @@ class CleaningProgramTest {
         assertEquals(reqs, program.getRequirements());
     }
 
-    // 6. Copia defensiva al construir y mapa de lectura no modificable al consultar
+    // Copia defensiva al construir y mapa de lectura no modificable al consultar
     @Test
     void testGivenMutableMapWhenModifiedAfterCreationThenProgramRequirementsRemainUnchanged() {
         Map<CleaningProduct, Integer> originalMap = new EnumMap<>(CleaningProduct.class);
@@ -147,7 +147,7 @@ class CleaningProgramTest {
                 () -> returnedMap.put(CleaningProduct.WAX, 1));
     }
 
-    // 7. Igualdad (equals/hashCode) basada únicamente en id
+    // Igualdad (equals/hashCode) basada únicamente en id
     @Test
     void testGivenTwoProgramsWithSameIdAndDifferentAttributesWhenComparingThenTheyAreEqualAndSameHashCode() {
         CleaningProgram prog1 = new CleaningProgram(
