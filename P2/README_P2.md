@@ -482,6 +482,8 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | T-COMP-1 | CleaningProgramByEnergyComparator | Distinta energía -> Ordena ascendentemente por energía | testGivenDifferentEnergyWhenComparingThenSortsByEnergyAscending |
 | T-COMP-2 | CleaningProgramByEnergyComparator | Misma energía -> Desempata ordenando ascendentemente por ID | testGivenSameEnergyAndDifferentIdWhenComparingThenSortsByIdAscending |
 | T-COMP-3 | CleaningProgramByEnergyComparator | Misma energía y mismo ID -> Devuelve cero | testGivenSameEnergyAndSameIdWhenComparingThenReturnsZero |
+| T-SERV-1 | CleaningRobotService | Stock suficiente (Agua=2, Req=2) -> Delega ejecución descontando inventario | testGivenSufficientStockWhenExecutingProgramThenDelegatesProperlyAndConsumes |
+| T-SERV-2 | CleaningRobotService | Stock insuficiente (Falta jabón) -> Delega ejecución sin modificar el inventario | testGivenInsufficientStockWhenExecutingProgramThenDelegatesAndLeavesInventoryIntact |
 
 ### Defectos detectados y corregidos
 
@@ -495,7 +497,7 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | D-UC-1 | testGivenSufficientStockWhenExecutingThenConsumesInventoryAndReturnsExecutedTrue | Esperado: Ejecuta con disponibilidad exacta. Observado: Falla devolviendo false | Causa: La condición `available <= required` daba por faltante un producto con stock exacto. Corrección: Cambiado a `available < required`. | `2a241fc` |
 | D-UC-2 | testGivenInsufficientStockWhenExecutingThenReturnsFalseWithMissingAndDoesNotModifyInventory | Esperado: Calcular cantidad faltante (required - available). Observado: Devolvía total requerido | Causa: `missing.put` usaba `required` directamente. Corrección: Cambiado a `required - available`. | `2a241fc` |
 | D-UC-3 | testGivenInsufficientStockWhenExecutingThenReturnsFalseWithMissingAndDoesNotModifyInventory | Esperado: No modificar existencias si falta algo. Observado: Consumo parcial de productos anteriores | Causa: `inventory.consume()` se llamaba dentro del bucle de comprobación. Corrección: Separado en dos fases (comprobar primero, consumir después). | `2a241fc` |
-| D-COMP-1 | testGivenDifferentEnergyWhenComparingThenSortsByEnergyAscending | Esperado: Orden ascendente por energía. Observado: Ordenaba de forma descendente | Causa: `Integer.compare` recibía el segundo objeto antes que el primero. Corrección: Invertido a `Integer.compare(first..., second...)`. |  |
+| D-COMP-1 | testGivenDifferentEnergyWhenComparingThenSortsByEnergyAscending | Esperado: Orden ascendente por energía. Observado: Ordenaba de forma descendente | Causa: `Integer.compare` recibía el segundo objeto antes que el primero. Corrección: Invertido a `Integer.compare(first..., second...)`. | `1e49d91` |
 
 ### Suplantador y desarrollo incremental
 
