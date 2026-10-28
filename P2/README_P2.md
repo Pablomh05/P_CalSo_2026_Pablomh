@@ -473,6 +473,12 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | T-ER-3 | ExecutionResult | missingProducts nulo -> Lanza NullPointerException | testGivenNullMissingProductsWhenCreatingResultThenThrowsNullPointerException |
 | T-ER-4 | ExecutionResult | Modificar mapa devuelto por missingProducts() -> Lanza UnsupportedOperationException | testGivenResultWhenModifyingReturnedMissingProductsMapThenThrowsUnsupportedOperationException |
 | T-ER-5 | ExecutionResult | Modificar mapa original tras construir -> No afecta a missingProducts del resultado | testGivenMutableMapWhenModifiedAfterCreationThenMissingProductsRemainsUnchanged |
+| T-UC-1 | ExecuteCleaningProgramUseCase | inventory nulo en constructor -> Lanza RuntimeException | testGivenNullInventoryWhenCreatingUseCaseThenThrowsException |
+| T-UC-2 | ExecuteCleaningProgramUseCase | execute() con program nulo -> Lanza RuntimeException | testGivenNullProgramWhenExecutingThenThrowsException |
+| T-UC-3 | ExecuteCleaningProgramUseCase | Programa sin productos o requerimientos 0 -> Ejecuta y no modifica existencias | testGivenProgramWithoutProductsWhenExecutingThenExecutesSuccessfullyWithoutDeductions / testGivenZeroQuantityRequirementsWhenExecutingThenExecutesSuccessfullyWithoutDeductions |
+| T-UC-4 | ExecuteCleaningProgramUseCase | Stock suficiente/exacto -> Devuelve true y descuenta cantidades | testGivenSufficientStockWhenExecutingThenConsumesInventoryAndReturnsExecutedTrue |
+| T-UC-5 | ExecuteCleaningProgramUseCase | Stock insuficiente (Transaccionalidad) -> Devuelve false con mapa detallado y no modifica ningún producto | testGivenInsufficientStockWhenExecutingThenReturnsFalseWithMissingAndDoesNotModifyInventory |
+| T-UC-6 | ExecuteCleaningProgramUseCase | Producto totalmente ausente en inventario -> Devuelve false y calcula faltante total | testGivenProductNotAvailableAtAllWhenExecutingThenReturnsFalseAndCalculatesMissing |
 
 ### Defectos detectados y corregidos
 
@@ -483,6 +489,9 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 | D-CP-1 | testGivenGlassCleanerWhenToStringThenReturnsLimpiacristales | Esperado: "limpiacristales". Observado: "cristales" | Causa: El string asignado a GLASS_CLEANER era "cristales". Corrección: Cambiado a "limpiacristales". | `35b0878` |
 | D-PR-1 | testGivenMutableMapWhenModifiedAfterCreationThenProgramRequirementsRemainUnchanged / testGivenProgramWhenModifyingReturnedRequirementsMapThenThrowsUnsupportedOperationException | Esperado: Copia defensiva e inmodificable. Observado: El mapa interno cambiaba al mutar el mapa original o el devuelto | Causa: El constructor asignaba directamente la referencia `this.requirements = requirements`. Corrección: Se usó `Map.copyOf(requirements)` para crear copia defensiva inmodificable. | `ca1afef` |
 | D-PR-2 | testGivenTwoProgramsWithSameIdAndDifferentAttributesWhenComparingThenTheyAreEqualAndSameHashCode / testGivenTwoProgramsWithDifferentIdAndSameAttributesWhenComparingThenTheyAreNotEqual | Esperado: Igualdad y hashCode basados solo en `id`. Observado: Comparaba por `name` | Causa: `equals` y `hashCode` usaban el atributo `name` en lugar de `id`. Corrección: Se modificaron para usar `id.equals(p.id)` e `id.hashCode()`. | `ca1afef` |
+| D-UC-1 | testGivenSufficientStockWhenExecutingThenConsumesInventoryAndReturnsExecutedTrue | Esperado: Ejecuta con disponibilidad exacta. Observado: Falla devolviendo false | Causa: La condición `available <= required` daba por faltante un producto con stock exacto. Corrección: Cambiado a `available < required`. |  |
+| D-UC-2 | testGivenInsufficientStockWhenExecutingThenReturnsFalseWithMissingAndDoesNotModifyInventory | Esperado: Calcular cantidad faltante (required - available). Observado: Devolvía total requerido | Causa: `missing.put` usaba `required` directamente. Corrección: Cambiado a `required - available`. |  |
+| D-UC-3 | testGivenInsufficientStockWhenExecutingThenReturnsFalseWithMissingAndDoesNotModifyInventory | Esperado: No modificar existencias si falta algo. Observado: Consumo parcial de productos anteriores | Causa: `inventory.consume()` se llamaba dentro del bucle de comprobación. Corrección: Separado en dos fases (comprobar primero, consumir después). |  |
 
 ### Suplantador y desarrollo incremental
 
