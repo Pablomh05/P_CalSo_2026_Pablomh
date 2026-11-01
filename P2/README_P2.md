@@ -509,8 +509,7 @@ El componente StubCleaningInventory es un doble de pruebas desarrollado en src/t
 | JUnit 5 | 100% (40/40 pruebas superadas, 0 fallos) | ![JUnit](evidencias/junit.png) |
 | JaCoCo (instrucciones y ramas) | 99% instrucciones, 90% ramas | ![JaCoCo](evidencias/jacoco.png) |
 | PIT (mutation coverage y test strength) | Mutation coverage: 88%, Test strength: 90% | ![PIT](evidencias/pit.png) |
-| SonarQube (Quality Gate e incidencias) | *Pendiente* | *Pendiente* |
-
+| SonarQube (Quality Gate e incidencias) | Quality Gate: PASSED. 0 Bugs, 0 Vulnerabilities, 0 Code Smells | ![SonarQube](evidencias/sonarqube.png) |
 **Commit de `main` analizado:** *completar*.
 
 **Enlace al vídeo externo (oculto/no listado):** *completar*.
