@@ -439,7 +439,7 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 
 ### Integrantes, responsabilidades y enlaces de integración
 
-*Completar.*
+Pablo Meroño Herranz. Desarrollo individual directamente en la rama main. Implementación y ejecución completa de los casos de prueba para el modelo de dominio (Entidades y Objetos de Valor), aplicación (Caso de Uso y Comparador) y adaptadores (Servicio). Construcción del StubCleaningInventory, detección y corrección de defectos de lógica e integración continua.
 
 ### Casos de prueba
 
@@ -501,16 +501,15 @@ Una prueba que pasa sin comprobar correctamente el resultado esperado no es evid
 
 ### Suplantador y desarrollo incremental
 
-*Explicar brevemente.*
-
+El componente StubCleaningInventory es un doble de pruebas desarrollado en src/test/java que implementa el puerto de salida ICleaningInventory. Su función es sustituir a la infraestructura de persistencia real (como una base de datos) que todavía no está implementada. Gracias al principio de Inversión de Dependencias, el caso de uso ExecuteCleaningProgramUseCase depende únicamente de esta interfaz. Esto nos permite instanciar el caso de uso en las pruebas y verificar toda su lógica de negocio, control de errores y transaccionalidad de forma aislada y rápida, sin tener que esperar a que el sistema externo esté construido.
 ### Indicadores de calidad
 
 | Herramienta | Resultado obtenido | Evidencia |
 | --- | --- | --- |
-| JUnit 5 | | |
-| JaCoCo (instrucciones y ramas) | | |
-| PIT (mutation coverage y test strength) | | |
-| SonarQube (Quality Gate e incidencias) | | |
+| JUnit 5 | 100% (40/40 pruebas superadas, 0 fallos) | ![JUnit](evidencias/junit.png) |
+| JaCoCo (instrucciones y ramas) | 99% instrucciones, 90% ramas | ![JaCoCo](evidencias/jacoco.png) |
+| PIT (mutation coverage y test strength) | Mutation coverage: 88%, Test strength: 90% | ![PIT](evidencias/pit.png) |
+| SonarQube (Quality Gate e incidencias) | *Pendiente* | *Pendiente* |
 
 **Commit de `main` analizado:** *completar*.
 
