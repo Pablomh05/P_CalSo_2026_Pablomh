@@ -32,13 +32,15 @@ public class DojoReservationController {
     }
 
     @GetMapping("/dojos")
-    public String dojos(@RequestParam(name = "teamId", defaultValue = "EQ-001") String teamId,
+    public String dojos(@RequestParam(name = "teamId", required = false) String teamId,
             @RequestParam(name = "trainingDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     LocalDate trainingDate, Model model) {
         LocalDate date = trainingDate == null ? LocalDate.now(clock).plusDays(1) : trainingDate;
         model.addAttribute("teamId", teamId);
         model.addAttribute("trainingDate", date);
+        
         try {
+            // Ahora si teamId llega nulo o vacío, el dominio lanzará la excepción
             var selected = search.find(teamId, date).orElse(null);
             model.addAttribute("dojo", selected);
             model.addAttribute("dojoRows", evaluation.evaluate(teamId, date, selected));
@@ -49,14 +51,15 @@ public class DojoReservationController {
     }
 
     @GetMapping("/coste")
-    public String coste(@RequestParam(name = "teamId", defaultValue = "EQ-001") String teamId,
-            @RequestParam(name = "dojoId", defaultValue = "D-002") String dojoId,
+    public String coste(@RequestParam(name = "teamId", required = false) String teamId,
+            @RequestParam(name = "dojoId", required = false) String dojoId,
             @RequestParam(name = "trainingDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     LocalDate trainingDate, Model model) {
         LocalDate date = trainingDate == null ? LocalDate.now(clock).plusDays(1) : trainingDate;
         model.addAttribute("teamId", teamId);
         model.addAttribute("dojoId", dojoId);
         model.addAttribute("trainingDate", date);
+        
         try {
             model.addAttribute("cost", cost.calculate(teamId, dojoId, date));
         } catch (IllegalArgumentException exception) {
