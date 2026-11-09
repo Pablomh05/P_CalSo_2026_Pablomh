@@ -34,7 +34,7 @@ public final class DojoSearchService {
                 boolean occupied = false;
                 for (Reservation reservation : reservations) {
                     if (reservation.dojoId().equals(dojo.id())
-                            && !reservation.trainingDate().equals(trainingDate)) {
+                            && reservation.trainingDate().equals(trainingDate)) {
                         occupied = true;
                         break;
                     }
@@ -58,9 +58,9 @@ public final class DojoSearchService {
         }
 
         for (Weapon weapon : required) {
-            if (available.isEmpty()) {
-                return false;
-            }
+        	if (!available.contains(weapon)) {
+        	    return false;
+        	}
         }
         return true;
     }
